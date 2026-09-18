@@ -1,0 +1,275 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+  typeName: 'PO Item',
+  typeNamePlural: 'PO Items',
+  title: {
+    type: #STANDARD,
+    value: 'PurchaseOrderItem'
+  },
+  description: {
+    type: #STANDARD,
+    value: 'Material'
+  }
+}
+
+annotate entity ZC_PO_UPLOAD_ITEM1 with
+{
+
+ 
+  @UI.facet: [
+    {
+      id: 'ItemDetails',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'PO Item Details',
+      position: 10
+    }
+  ]
+
+  @UI: {
+    lineItem: [
+      {
+        position: 10,
+        label: 'Row'
+      }
+    ],
+    identification: [
+      {
+        position: 10,
+        label: 'Row'
+      }
+    ]
+  }
+  RowNo;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 20,
+        label: 'PO Item'
+      }
+    ],
+    identification: [
+      {
+        position: 20,
+        label: 'PO Item'
+      }
+    ]
+  }
+  PurchaseOrderItem;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 30,
+        label: 'Material'
+      }
+    ],
+    identification: [
+      {
+        position: 30,
+        label: 'Material'
+      }
+    ]
+  }
+  Material;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 40,
+        label: 'Description'
+      }
+    ],
+    identification: [
+      {
+        position: 40,
+        label: 'Description'
+      }
+    ]
+  }
+  ItemText;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 50,
+        label: 'Material Group'
+      }
+    ],
+    identification: [
+      {
+        position: 50,
+        label: 'Material Group'
+      }
+    ]
+  }
+  MaterialGroup;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 60,
+        label: 'Plant'
+      }
+    ],
+    identification: [
+      {
+        position: 60,
+        label: 'Plant'
+      }
+    ]
+  }
+  Plant;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 70,
+        label: 'Quantity'
+      }
+    ],
+    identification: [
+      {
+        position: 70,
+        label: 'Quantity'
+      }
+    ]
+  }
+  Quantity;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 80,
+        label: 'UOM'
+      }
+    ],
+    identification: [
+      {
+        position: 80,
+        label: 'UOM'
+      }
+    ]
+  }
+  UOM;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 90,
+        label: 'Net Price'
+      }
+    ],
+    identification: [
+      {
+        position: 90,
+        label: 'Net Price'
+      }
+    ]
+  }
+  NetPrice;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 100,
+        label: 'Currency'
+      }
+    ],
+    identification: [
+      {
+        position: 100,
+        label: 'Currency'
+      }
+    ]
+  }
+  Currency;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 110,
+        label: 'Tax Code'
+      }
+    ],
+    identification: [
+      {
+        position: 110,
+        label: 'Tax Code'
+      }
+    ]
+  }
+  TaxCode;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 120,
+        label: 'PO Number'
+      }
+    ],
+    identification: [
+      {
+        position: 120,
+        label: 'PO Number'
+      }
+    ]
+  }
+  PONumber;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 130,
+        label: 'Status'
+      }
+    ],
+    identification: [
+      {
+        position: 130,
+        label: 'Status'
+      }
+    ]
+  }
+  Status;
+
+
+  @UI: {
+    lineItem: [
+      {
+        position: 140,
+        label: 'Message'
+      }
+    ],
+    identification: [
+      {
+        position: 140,
+        label: 'Message'
+      }
+    ]
+  }
+  Message;
+
+
+  @UI.hidden: true
+  ItemUUID;
+
+
+  @UI.hidden: true
+  UploadUUID;
+
+}

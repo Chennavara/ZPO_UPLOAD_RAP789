@@ -1,0 +1,252 @@
+managed implementation in class zbp_i_po_upload1 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_PO_UPLOAD1
+alias Upload
+with additional save
+persistent table zpo_up_h1
+draft table zpo_up_h_d1
+lock master
+total etag LocalLastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+
+  create;
+  update;
+  delete;
+
+  action UploadExcel
+    result [1] $self;
+
+  action CreatePO
+    result [1] $self;
+
+
+determination AutoUploadOnCreate
+  on save
+{
+  create;
+}
+
+  side effects
+  {
+    action UploadExcel affects $self, entity _Items;
+    action CreatePO    affects $self, entity _Items;
+  }
+
+  field ( numbering : managed, readonly )
+    UploadUUID;
+
+field ( readonly )
+  PurchaseOrderType,
+  CompanyCode,
+  PurchasingOrganization,
+  PurchasingGroup,
+  Supplier,
+  PurchaseOrderDate,
+  DocumentCurrency,
+  PONumber,
+
+  TotalRows,
+  Success,
+  Failed,
+  Status,
+  Message,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LocalLastChangedAt;
+
+
+
+
+
+
+  draft action Edit;
+
+  draft action Activate optimized;
+
+  draft action Discard;
+
+  draft action Resume;
+
+  draft determine action Prepare;
+
+
+  association _Items
+  {
+    create;
+    with draft;
+  }
+
+
+  mapping for zpo_up_h1
+  {
+
+    UploadUUID =
+      upload_uuid;
+
+    FileName =
+      file_name;
+
+    MimeType =
+      mime_type;
+
+    Attachment =
+      attachment;
+
+    PurchaseOrderType =
+      purchase_order_type;
+
+    CompanyCode =
+      company_code;
+
+    PurchasingOrganization =
+      purchasing_org;
+
+    PurchasingGroup =
+      purchasing_group;
+
+    Supplier =
+      supplier;
+
+    PurchaseOrderDate =
+      purchase_order_date;
+
+    DocumentCurrency =
+      document_currency;
+
+    PONumber =
+      po_number;
+
+    TotalRows =
+      total_rows;
+
+     success =
+       success;
+
+    Failed =
+      failed;
+
+    Status =
+      status;
+
+    Message =
+      message;
+
+    CreatedBy =
+      created_by;
+
+    CreatedAt =
+      created_at;
+
+    LastChangedBy =
+      last_changed_by;
+
+    LocalLastChangedAt =
+      local_last_changed_at;
+
+  }
+
+}
+
+
+define behavior for ZI_PO_UPLOAD_ITEM1
+alias _Item
+
+persistent table zpo_up_i1
+draft table zpo_up_i_d1
+
+lock dependent by _Upload
+authorization dependent by _Upload
+
+{
+
+  update;
+  delete;
+
+
+  field ( numbering : managed, readonly )
+    ItemUUID;
+
+
+  field ( readonly )
+    UploadUUID,
+    RowNo,
+    PurchaseOrderItem,
+    Material,
+    ItemText,
+    MaterialGroup,
+    Plant,
+    Quantity,
+    UOM,
+    NetPrice,
+    Currency,
+    TaxCode,
+    PONumber,
+    Status,
+    Message;
+
+
+  association _Upload
+  {
+    with draft;
+  }
+
+
+  mapping for zpo_up_i1
+  {
+
+    ItemUUID =
+      item_uuid;
+
+    UploadUUID =
+      upload_uuid;
+
+    RowNo =
+      row_no;
+
+    PurchaseOrderItem =
+      purchase_order_item;
+
+    Material =
+      material;
+
+    ItemText =
+      item_text;
+
+    MaterialGroup =
+      material_group;
+
+    Plant =
+      plant;
+
+    Quantity =
+      quantity;
+
+    UOM =
+      uom;
+
+    NetPrice =
+      net_price;
+
+    Currency =
+      currency;
+
+    TaxCode =
+      tax_code;
+
+    PONumber =
+      po_number;
+
+    Status =
+      status;
+
+    Message =
+      message;
+
+  }
+
+}

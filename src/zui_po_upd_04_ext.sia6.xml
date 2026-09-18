@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZUI_PO_UPD_04_EXT</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>iam app</DESCRIPTION>
+     <RESPONSIBLE>CB9980000000</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>BUV</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZPO_UPLOAD_RAP789</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZUI_PO_UPD_04_EXT</APP_ID>
+    <APP_TYPE>EXT</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <UI_APP_ID>ZUI_PO_UPD_04_UI5R</UI_APP_ID>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZUI_PO_UPD_04</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZUI_PO_UPD_04_EXT</APP_ID>
+      <SRVC_NAME>84D59FE0303E410798CD41AFBFC634</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <UIAD_SRC>ZUI_PO_UPD_04_UI5R</UIAD_SRC>
+      <TEXT>PO Excel Upload Binding</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <AUTH>
+     <item>
+      <AUTH_OBJECT>S_TABU_NAM</AUTH_OBJECT>
+      <STATUS>U</STATUS>
+      <TEXT>Table Access by Generic Standard Tools</TEXT>
+      <AUTH_ITEM>
+       <item>
+        <UUID>QgEKC5BbH9GrokJGBHTnFw==</UUID>
+        <AUTH_OBJECT>S_TABU_NAM</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0001</AUTH_OBJECT_INSTANCE>
+        <TEXT>Table Access by Generic Standard Tools</TEXT>
+        <STATUS>U</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUES>
+           <item>
+            <UUID>QgEKC5BbH9GrokJGBHUHFw==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>U</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+         <item>
+          <FIELD>TABLE</FIELD>
+          <VALUES>
+           <item>
+            <UUID>QgEKC5BbH9GrokJGBHUnFw==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Table Name</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+        </VALUES>
+       </item>
+      </AUTH_ITEM>
+     </item>
+    </AUTH>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+    <RTYPE_MIG_STATUS>3</RTYPE_MIG_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

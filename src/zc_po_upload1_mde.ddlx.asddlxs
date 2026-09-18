@@ -1,0 +1,305 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'PO Upload',
+    typeNamePlural: 'PO Uploads',
+    title: {
+      type: #STANDARD,
+      //value: 'FileName'
+      value: 'PONumber'
+    }
+  }
+}
+
+annotate entity ZC_PO_UPLOAD1 with
+{
+
+
+
+  @UI.facet: [
+
+    {
+      id: 'UploadInformation',
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Upload Information',
+      targetQualifier: 'UPLOAD',
+      position: 10
+    },
+
+    {
+      id: 'POHeader',
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'PO Header',
+      targetQualifier: 'POHEADER',
+      position: 20
+    },
+
+    {
+      id: 'POResults',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'PO Creation Results',
+      targetElement: '_Items',
+      position: 30
+    }
+
+  ]
+
+
+
+
+  @UI.lineItem: [
+    {
+      position: 10,
+      label: 'File Name'
+    }
+  ]
+
+  @UI.identification: [
+
+    //{
+      //position: 10,
+      //type: #FOR_ACTION,
+      //dataAction: 'UploadExcel',
+     // label: 'Upload Excel'
+   // },
+
+    {
+      position: 20,
+      type: #FOR_ACTION,
+      dataAction: 'CreatePO',
+      label: 'Create PO'
+    }
+
+  ]
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'UPLOAD',
+      position: 20,
+      label: 'File Name'
+    }
+  ]
+
+  FileName;
+
+
+
+  @UI.lineItem: [
+    {
+      position: 20,
+      label: 'Status'
+    }
+  ]
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'UPLOAD',
+      position: 30,
+      label: 'Status'
+    }
+  ]
+
+  Status;
+
+
+
+  @UI.lineItem: [
+    {
+      position: 30,
+      label: 'PO Number'
+    }
+  ]
+
+  PONumber;
+
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'UPLOAD',
+      position: 10,
+      label: 'Excel File'
+    }
+  ]
+
+  Attachment;
+
+
+
+  @UI.hidden: true
+  MimeType;
+
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'UPLOAD',
+      position: 40,
+      label: 'Total Rows'
+    }
+  ]
+
+  TotalRows;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'UPLOAD',
+      position: 50,
+      label: 'Successful'
+    }
+  ]
+
+  Success;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'UPLOAD',
+      position: 60,
+      label: 'Failed'
+    }
+  ]
+
+  Failed;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'UPLOAD',
+      position: 70,
+      label: 'Message'
+    }
+  ]
+
+  Message;
+
+
+
+ 
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 10,
+      label: 'PO Type'
+    }
+  ]
+
+  PurchaseOrderType;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 20,
+      label: 'Company Code'
+    }
+  ]
+
+  CompanyCode;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 30,
+      label: 'Purchasing Organization'
+    }
+  ]
+
+  PurchasingOrganization;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 40,
+      label: 'Purchasing Group'
+    }
+  ]
+
+  PurchasingGroup;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 50,
+      label: 'Supplier'
+    }
+  ]
+
+  Supplier;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 60,
+      label: 'Purchase Order Date'
+    }
+  ]
+
+  PurchaseOrderDate;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 70,
+      label: 'Currency'
+    }
+  ]
+
+  DocumentCurrency;
+
+
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'POHEADER',
+      position: 80,
+      label: 'PO Number1'
+    }
+  ]
+
+  ponumber1;
+
+
+
+  @UI.hidden: true
+  UploadUUID;
+
+
+  @UI.hidden: true
+  CreatedBy;
+
+
+  @UI.hidden: true
+  CreatedAt;
+
+
+  @UI.hidden: true
+  LastChangedBy;
+
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

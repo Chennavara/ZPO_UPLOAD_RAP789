@@ -1,0 +1,5 @@
+@EndUserText.label: 'PO Excel Upload Service'
+define service ZUI_PO_UPLOAD1_SRV {
+  expose ZC_PO_UPLOAD1      as Uploads;
+  expose ZC_PO_UPLOAD_ITEM1 as UploadItems;
+}
